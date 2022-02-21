@@ -1,0 +1,55 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Delete",
+            "type": "shell",
+            "command": "rm -rf ${workspaceFolder}/Solar.app && rm .qmake.stash Makefile",
+            "detail": "清除",
+            "problemMatcher":"$gcc",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "execute the software",
+            "type": "shell",
+            "command": "open ${workspaceFolder}/Solar.app",
+            "detail": "执行",
+            "problemMatcher":"$gcc",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "g++ Build and Execute",
+            "type": "shell",
+            "command": "make clean && make -j4 && open ${workspaceFolder}/Solar.app",
+            "detail": "清除-构建-执行",
+            "problemMatcher":"$gcc",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build for Test",
+            "type": "shell",
+            "command": "make clean && make -j4",
+            "detail": "构建测试",
+            "problemMatcher":"$gcc",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}

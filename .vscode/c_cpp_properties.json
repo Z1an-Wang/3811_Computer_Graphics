@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${env:QT_HEADERS}/**",
+                "${env:GL_HEADERS}/",
+                "/usr/local/include/"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "${env:SYS_FRAMEWORK}",
+                "${env:QT_LIBS}"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++11",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
